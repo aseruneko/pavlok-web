@@ -1,5 +1,6 @@
 export function schedule() {
   Deno.cron("hourly timer", "* * * * *", () => {
+    console.log("hourely timer executed.");
     fetch("https://api.pavlok.com/api/v5/stimulus/send", {
       method: "POST",
       headers: {
@@ -15,4 +16,5 @@ export function schedule() {
       }),
     });
   });
+  console.log("hourly timer has been scheduled.");
 }
