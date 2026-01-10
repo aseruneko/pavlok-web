@@ -21,7 +21,7 @@ export const handler = define.handlers({
         body: JSON.stringify({
           stimulus: {
             stimulusType: "zap",
-            stimulusValue: level ?? 50,
+            stimulusValue: Math.floor((level ?? 50) / 2),
           },
         }),
       }
