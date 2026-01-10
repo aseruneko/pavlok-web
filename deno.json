@@ -1,5 +1,6 @@
 {
   "nodeModulesDir": "manual",
+  "unstable": ["cron"],
   "tasks": {
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "vite",
@@ -22,7 +23,13 @@
     "vite": "npm:vite@^7.1.3"
   },
   "compilerOptions": {
-    "lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
+    "lib": [
+      "dom",
+      "dom.asynciterable",
+      "dom.iterable",
+      "deno.ns",
+      "deno.unstable"
+    ],
     "jsx": "precompile",
     "jsxImportSource": "preact",
     "jsxPrecompileSkipElements": [

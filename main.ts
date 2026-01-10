@@ -1,4 +1,5 @@
 import { App, staticFiles } from "fresh";
+import { schedule } from "./schedule/schedule.ts";
 import { define, type State } from "./utils.ts";
 
 export const app = new App<State>();
@@ -15,7 +16,7 @@ app.use(async (ctx) => {
 app.get("/api2/:name", (ctx) => {
   const name = ctx.params.name;
   return new Response(
-    `Hello, ${name.charAt(0).toUpperCase() + name.slice(1)}!`,
+    `Hello, ${name.charAt(0).toUpperCase() + name.slice(1)}!`
   );
 });
 
@@ -28,3 +29,5 @@ app.use(exampleLoggerMiddleware);
 
 // Include file-system based routes here
 app.fsRoutes();
+
+schedule();
