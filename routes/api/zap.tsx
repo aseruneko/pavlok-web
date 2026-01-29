@@ -21,10 +21,10 @@ export const handler = define.handlers({
         body: JSON.stringify({
           stimulus: {
             stimulusType: "zap",
-            stimulusValue: Math.floor((level ?? 50) / 2),
+            stimulusValue: level ?? 50, // Math.floor((level ?? 50) / 2),
           },
         }),
-      }
+      },
     );
     return response.status === 200 ? Response.json({}) : Response.error();
   },
